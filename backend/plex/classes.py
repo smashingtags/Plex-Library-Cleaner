@@ -18,7 +18,7 @@ class PlexWrapper(object):
 
     def get_dupe_movies(self):
         dupes = []
-        section = self.plex.library.section(title="Movies")
+        section = self.plex.library.section(title="4K Movies")
         for movie in section.search(duplicate=True):
             if len(movie.media) > 1:
                 dupes.append(self.movie_to_dict(movie))
@@ -26,7 +26,7 @@ class PlexWrapper(object):
 
     def get_movie_sample_files(self):
         movies = []
-        section = self.plex.library.section(title="Movies")
+        section = self.plex.library.section(title="4K Movies")
         for movie in section.all():
             samples = []
             for media in movie.media:
